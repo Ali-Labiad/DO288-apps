@@ -12,7 +12,7 @@ RUN   yum install -y --disableplugin=subscription-manager java-1.8.0-openjdk-hea
       useradd wildfly && \
       mkdir -p /opt/app-root/bin
 
-ENV Build https://github.com/RedHatTraining/DO288-apps/releases/download/OCP-4.1-1/hello-java.jar
+ENV Build "https://"
 
 # Copy the runnable fat JAR to the container.
 ADD   ${Build} /opt/app-root/bin/
