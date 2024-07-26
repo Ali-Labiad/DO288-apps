@@ -6,14 +6,13 @@ MAINTAINER   Red Hat Training <training@redhat.com>
 # command line options to pass to the JVM
 ENV	  JAVA_OPTIONS -Xmx512m
 
+ENV Build "https://"
 
 # Install the Java runtime, create a user for running the app, and set permissions
 RUN   yum install -y --disableplugin=subscription-manager java-1.8.0-openjdk-headless && \
       yum clean all --disableplugin=subscription-manager -y && \
       useradd wildfly && \
       mkdir -p /opt/app-root/bin
-
-ENV Build "https://"
 
 # Copy the runnable fat JAR to the container.
 ADD   ${Build} /opt/app-root/bin/
